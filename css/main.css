@@ -7,6 +7,7 @@
 
 * {
   box-sizing: border-box;
+  border: none;
   color: inherit;
   margin: 0;
   padding: 0;
@@ -19,10 +20,11 @@ html {
 
 .body {
   background-color: var(--black);
+  color: var(--white);
   font-family: 'Times New Roman', Times, serif;
 }
 
-.header__container {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,4 +53,45 @@ html {
 
 .nav__link:hover {
   color: var(--white);
+}
+
+.spotlight {
+  background: url(../img/spotlight-background.jpg);
+  background-blend-mode: soft-light;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 85vh;
+  padding: 4rem;
+}
+
+.spotlight__title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.spotlight__description {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  width: 55%;
+  margin-bottom: 4rem;
+}
+
+.spotlight__button {
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-radius: .25rem;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin-right: 2rem;
+  padding: .75rem;
+  width: 12rem;
+}
+
+.spotlight__button:hover {
+  background-color: var(--red);
+  border: 1px solid var(--red);
 }
