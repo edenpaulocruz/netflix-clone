@@ -1,8 +1,8 @@
 :root {
-  --black: #141414;
-  --gray: #aaa;
-  --red: #e50914;
-  --white: #fff;
+  --background-color: #141414;
+  --secondary-text-color: #aaa;
+  --main-color: #e50914;
+  --main-text-color: #fff;
 }
 
 * {
@@ -15,32 +15,35 @@
 }
 
 html {
+  font-family: 'Oswald', sans-serif;
   font-size: 16px;
+  font-weight: 300;
 }
 
 .body {
-  background-color: var(--black);
-  color: var(--white);
-  font-family: 'Times New Roman', Times, serif;
+  background-color: var(--background-color);
+  color: var(--main-text-color);
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: .75rem 2rem;
 }
 
 .header__logo {
-  color: var(--red);
-  font-family: 'Arial Black', sans-serif;
-  font-size: 2.5rem;
+  color: var(--main-color);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: .2rem;
   text-transform: uppercase;
 }
 
 .nav {
-  color: var(--gray);
-  font-size: 1.25rem;
+  color: var(--secondary-text-color);
+  font-size: 1rem;
+  
 }
 
 .nav__item {
@@ -49,25 +52,28 @@ html {
 
 .nav__link {
   margin-left: 2rem;
+  transition: .5s ease all;
 }
 
 .nav__link:hover {
-  color: var(--white);
+  color: var(--main-text-color);
 }
 
 .spotlight {
-  background: url(../img/spotlight-background.jpg);
-  background-blend-mode: soft-light;
+  background: linear-gradient(45deg, rgba(0, 0, 0, .6), rgba(0, 0,0, 0.6)),
+              url(../img/spotlight-background.jpg);
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 85vh;
-  padding: 4rem;
+  height: 90vh;
+  padding: 2rem;
 }
 
 .spotlight__title {
-  font-size: 3rem;
+  color: var(--main-color);
+  font-size: 5rem;
+  font-weight: 700;
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
@@ -81,17 +87,23 @@ html {
 
 .spotlight__button {
   background-color: transparent;
-  border: 1px solid var(--white);
+  border: 1px solid var(--main-text-color);
   border-radius: .25rem;
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
   font-size: 1rem;
   margin-right: 2rem;
   padding: .75rem;
+  transition: .8s ease all;
   width: 12rem;
 }
 
 .spotlight__button:hover {
-  background-color: var(--red);
-  border: 1px solid var(--red);
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.material-icons {
+  font-size: 1rem;
+  margin-right: .5rem;
 }
