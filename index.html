@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NETFLIX CLONE</title>
+  <title>HOMEFLIX</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
@@ -20,11 +20,20 @@
 <body class="body">
   <header class="header">
     <h1 class="header__logo">Netflix</h1>
+
+    <input id="nav__control" class="nav__control" type="checkbox" />
+
+    <label for="nav__control">
+      <div class="nav__button">
+        <span class="nav__button__icon"></span>
+      </div>
+    </label>
+
     <nav class="nav">
       <ul>
         <li class="nav__item"><a class="nav__link" href="#">Início</a></li>
-        <li class="nav__item"><a class="nav__link" href="#">Filmes</a></li>
-        <li class="nav__item"><a class="nav__link" href="#">Séries</a></li>
+        <li class="nav__item"><a class="nav__link" href="#movies">Filmes</a></li>
+        <li class="nav__item"><a class="nav__link" href="#series">Séries</a></li>
         <li class="nav__item"><a class="nav__link" href="#">Documentários</a></li>
       </ul>
     </nav>
@@ -40,7 +49,7 @@
       </div>
 
       <div class="spotlight__buttons">
-        <button role="button" class="spotlight__button">
+        <button role="button" class="spotlight__button spotlight__button-play">
           <span class="material-icons">
             play_arrow
           </span>
@@ -55,51 +64,21 @@
       </div>
     </section>
 
-    <section id="series" class="highlights">
+    <section id="movies" class="highlights">
       <div>
-        <h2 class="highlights__title">Séries</h2>
+        <h2 class="highlights__title">Filmes</h2>
         <div class="owl-carousel owl-theme">
           <div class="item">
-            <img class="hilights__image" src="./img/hilights1.jpg" alt="Ragnarok" title="Ragnarok">
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="series" class="highlights">
+      <div>
+        <h2 class="highlights__title">Series</h2>
+        <div class="owl-carousel owl-theme">
           <div class="item">
-            <img class="hilights__image" src="./img/hilights2.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights3.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights4.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights5.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights6.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights7.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights8.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights9.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights10.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights11.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights12.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights13.jpg" alt="" title="">
-          </div>
-          <div class="item">
-            <img class="hilights__image" src="./img/hilights14.jpg" alt="" title="">
           </div>
         </div>
       </div>
@@ -107,6 +86,7 @@
   </main>
 
   <!-- Owl Carousel JS -->
+  <script src="./js/main.js"></script>
   <script src="./js/owl/jquery.min.js"></script>
   <script src="./js/owl/owl.carousel.min.js"></script>
   <script src="./js/owl/owl.setup.js"></script>

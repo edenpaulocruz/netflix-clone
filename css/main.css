@@ -5,7 +5,9 @@
   --main-text-color: #fff;
 }
 
-* {
+*,
+::before,
+::after {
   box-sizing: border-box;
   border: none;
   color: inherit;
@@ -27,35 +29,101 @@ html {
 }
 
 .header {
-  background-color: inherit;
+  background-color: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .75rem 2rem;
+  padding: 1rem;
   position: sticky;
   inset: 0;
+  z-index: 99;
 }
 
 .header__logo {
   color: var(--main-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 500;
   letter-spacing: .2rem;
+  line-height: 1;
   text-transform: uppercase;
 }
 
+.nav__button {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+}
+
+.nav__button__icon {
+  background: #fff;
+  display: block;
+  position: relative;
+  height: .2rem;
+  width: 2rem;
+  top: .9rem;
+  left: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.nav__button__icon::before,
+.nav__button__icon::after {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  width: 100%;
+}
+
+.nav__button__icon::before {
+  top: -.6rem;
+}
+
+.nav__button__icon::after {
+  bottom: -.6rem;
+}
+
+.nav__control {
+  display: none;
+}
+
+.nav__control:checked ~ label .nav__button__icon {
+  transform: rotate(45deg);
+}
+
+.nav__control:checked ~ label .nav__button__icon::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.nav__control:checked ~ label .nav__button__icon::after {
+  bottom: 0;
+  transform: rotate(90deg);
+}
+
 .nav {
+  background-color: inherit;
   color: var(--secondary-text-color);
+  height: 100vh;
+  left: -100%;
+  max-width: 20rem;
+  padding: 1rem;
+  position: fixed;
+  top: 3.8rem;
+  width: 100%;
   font-size: 1rem;
+  font-weight: 500;
   letter-spacing: .1rem;
+  transition: .7s;
 }
 
 .nav__item {
-  display: inline-block;
+  list-style: none;
+  margin-bottom: 1rem;
 }
 
 .nav__link {
-  margin-left: 2rem;
   transition: .5s ease all;
 }
 
@@ -63,66 +131,79 @@ html {
   color: var(--main-text-color);
 }
 
+.nav__control:checked ~ .nav {
+  left: 0;
+}
+
 .spotlight {
   background: linear-gradient(45deg, rgba(0, 0, 0, .6), rgba(0, 0,0, 0.6)),
-              url(../img/spotlight-background.jpg) fixed;
+              url(../img/spotlight-background.jpg);
   background-size: cover;
-  background-position: left;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
-  margin-bottom: 2rem;
-  padding: 2rem;
+  margin-bottom: -rem;
+  padding: 4rem 5%;
 }
 
 .spotlight__title {
-  color: var(--main-color);
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  line-height: 1;
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
 .spotlight__description {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.5;
   width: 45%;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .spotlight__button {
-  background-color: transparent;
-  border: 1px solid var(--main-text-color);
+  align-items: center;
+  background-color: var(--main-text-color);
   border-radius: .25rem;
+  color: var(--background-color);
   cursor: pointer;
+  display: flex;
   font-family: inherit;
   font-size: 1rem;
-  margin-right: 2rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  opacity: .6;
   padding: .75rem;
   transition: .8s ease all;
   width: 12rem;
 }
 
-.spotlight__button:hover {
+.spotlight__button-play {
   background-color: var(--main-color);
-  border: 1px solid var(--main-color);
+  color: var(--main-text-color);
+}
+
+.spotlight__button:hover {
+  opacity: 1;
 }
 
 .material-icons {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-right: .5rem;
 }
 
 .highlights {
-  padding: 0 2rem;
+  padding: 4rem 1rem 0;
+  margin-bottom: -3rem;
 }
 
 .highlights__title {
   cursor: pointer;
-  font-size: 2.4vw;
+  font-size: 1.5rem;
   letter-spacing: .1rem;
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .hilights__image {
