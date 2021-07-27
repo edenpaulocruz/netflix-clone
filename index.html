@@ -38,24 +38,6 @@
   </header>
 
   <main>
-    <!-- <section class="highlights">
-      <div class="spotlight__info"></div>
-      <div class="spotlight__buttons">
-        <button role="button" class="spotlight__button spotlight__button-play">
-          <span class="material-icons">
-            play_arrow
-          </span>
-          Assistir agora
-        </button>
-        <button role="button" class="spotlight__button">
-          <span class="material-icons">
-            info
-          </span>
-          Mais informações
-        </button>
-      </div>
-    </section> -->
-
     <section id="highlights" class="section">
       <div>
         <h2 class="section__title">Destaques</h2>
@@ -85,10 +67,23 @@
         </div>
       </div>
     </section>
+
+    <div class="modal__overlay">
+      <div class="modal">
+        <a class="modal__close">
+          <span class="material-icons">close</span>
+        </a>
+    
+        <div class="modal__content">
+          <iframe class="modal__media" src="" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- Owl Carousel JS -->
   <script src="./js/main.js"></script>
+  <script src="./js/modal.js"></script>
   <script src="./js/owl/jquery.min.js"></script>
   <script src="./js/owl/owl.carousel.min.js"></script>
   <script src="./js/owl/owl.setup.js"></script>

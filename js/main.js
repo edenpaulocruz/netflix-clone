@@ -141,7 +141,7 @@
   
   const itemTemplate = (item) => {
     return `
-      <div class="item">
+      <div class="item" id="${item.id}">
         <img 
           class="item__image"
           src="https://img.youtube.com/vi/${item.id}/mqdefault.jpg"

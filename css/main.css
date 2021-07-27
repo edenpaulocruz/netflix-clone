@@ -1,5 +1,6 @@
 :root {
   --background-color: #141414;
+  --background-color-transparent: #141414bb;
   --secondary-text-color: #aaa;
   --main-color: #e50914;
   --main-text-color: #fff;
@@ -196,15 +197,87 @@ html {
 }
 
 .section__title {
-  cursor: pointer;
   font-size: 1.5rem;
   letter-spacing: .1rem;
   margin-bottom: 1rem;
 }
 
+.section__item {
+  position: relative;
+  display: grid;
+}
+
+.item:hover .item__description {
+  display: flex;
+  opacity: 1;
+}
+
 .item__image {
   display: block;
-  height: 100%;
   cursor: pointer;
   width: 100%;
+}
+
+.item__description {
+  border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  background-color: var(--background-color-transparent);
+  padding: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.item__title {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.item__sinopse {
+  font-size: .9rem;
+  line-height: 150%;
+}
+
+/* === MODAL === */
+.modal__overlay {
+  background-color: var(--background-color-transparent);
+  height: 100vh;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 100;
+}
+
+.modal {
+  background-color: transparent;
+  height: 90vh;
+  margin: 5vh auto;
+  position: relative;
+  width: 90%;
+}
+
+.modal__close {
+  color: var(--main-text-color);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: -.5rem;
+}
+
+/* === MODAL ACTIVE=== */
+.modal__overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__media {
+  height: 90%;
+  width: 100%;
+  position: absolute;
+  top: 5%;
 }
