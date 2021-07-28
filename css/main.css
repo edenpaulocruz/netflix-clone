@@ -1,3 +1,4 @@
+/* ===== Basic Styles ===== */
 :root {
   --background-color: #141414;
   --background-color-transparent: #141414bb;
@@ -29,6 +30,7 @@ html {
   color: var(--main-text-color);
 }
 
+/* === HEADER === */
 .header {
   background-color: var(--background-color);
   display: flex;
@@ -49,6 +51,7 @@ html {
   text-transform: uppercase;
 }
 
+/* MENU HAMBURGER ICON */
 .nav__button {
   cursor: pointer;
   height: 2rem;
@@ -103,6 +106,7 @@ html {
   transform: rotate(90deg);
 }
 
+/* === MAIN NAVIGATION === */
 .nav {
   background-color: inherit;
   color: var(--secondary-text-color);
@@ -136,6 +140,7 @@ html {
   left: 0;
 }
 
+/* === SECTIONS === */
 .section {
   padding: 2rem 1.5rem 0;
 }
@@ -151,40 +156,13 @@ html {
   display: grid;
 }
 
-.item:hover .item__description {
-  display: flex;
-  opacity: 1;
-}
-
 .item__image {
   display: block;
   cursor: pointer;
   width: 100%;
 }
 
-.item__description {
-  border: 1px solid red;
-  height: 100%;
-  width: 100%;
-  background-color: var(--background-color-transparent);
-  padding: 1rem;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.item__title {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-.item__sinopse {
-  font-size: .9rem;
-  line-height: 150%;
-}
-
+/* ===== FOOTER ===== */
 .footer {
   padding: 5rem 5rem 2rem;
   color: var(--secondary-text-color);
@@ -192,6 +170,7 @@ html {
   text-align: center;
 }
 
+/* === SOCIAL LINKS */
 .social {
   margin-bottom: 2rem;
 }
@@ -244,7 +223,7 @@ html {
   top: -.5rem;
 }
 
-/* === MODAL ACTIVE=== */
+/* === MODAL ACTIVE === */
 .modal__overlay.active {
   opacity: 1;
   visibility: visible;
@@ -255,4 +234,34 @@ html {
   width: 100%;
   position: absolute;
   top: 5%;
+}
+
+/* ===== HEADER & NAVIGATION - LARGE SCREEN */
+@media (min-width: 1000px) {
+  .header {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .label {
+    display: none;
+  }
+  
+  .header__logo {
+    margin: 0;
+  }
+  
+  .nav {
+    max-width: unset;
+    width: unset;
+    height: unset;
+    position: unset;
+    padding: 0;
+  }
+  
+  .nav__item {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 3rem;
+  }
 }
