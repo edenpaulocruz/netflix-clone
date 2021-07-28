@@ -137,7 +137,7 @@
       category: 'movie',
       highlight: false
     }
-  ]
+  ];
   
   const itemTemplate = (item) => {
     return `
